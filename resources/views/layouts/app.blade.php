@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Almarai' rel='stylesheet'>
 
     <!-- Scripts -->
@@ -27,7 +28,7 @@
 </head>
 <body dir="rtl">
     <header>
-        <nav class="navbar"style="background-color:rgb(126,65,223) ;"> 
+        <nav class="navbar" style="background-color: rgb(126, 65, 223);"> 
             <div  class="container-fluid">
                 <ul class="list-inline">
                     <li class="list-inline-item p-1" ><a href="{{route('index')}}">الرئيسية</a></li>

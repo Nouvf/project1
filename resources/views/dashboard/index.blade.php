@@ -1,4 +1,4 @@
 @extends('layouts.admin')
 @section('content')
-<P> hi </p>
+<P> Iam index page in Dashboard :)</p>
 @endsection

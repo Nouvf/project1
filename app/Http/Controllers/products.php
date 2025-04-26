@@ -23,4 +23,5 @@ class products extends Controller
     {
         return view('myproducts');
     }
+ 
 }
