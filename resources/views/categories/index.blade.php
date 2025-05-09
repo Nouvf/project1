@@ -1,10 +1,27 @@
 @extends('layouts.admin')
 @section('content')
+<div class="modal"  id="deleteModel" tabindex="-1" aria-labelledby="editModalLabel"  aria-hidden="true" >
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title"> تأكيد الحذف</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <p> هل بالفعل تريد حذف هذا السجل؟</p>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+         <button type="button" class="btn btn-primary"  id="SaveChanges" onclick="ConfirmDelete_categories()"  data-bs-dismiss="modal"> حذف</button>
+       </div>
+     </div>
+   </div>
+ </div>
    <div class="container">
       <div class="row mt-5">
          <div class="col d-flex justify-content-center">
             <div class="card mt-5">
-                <div class="card-header" style="background-color: rgb(109, 24, 200);">
+                <div class="card-header" style="background-color:rgb(130, 119, 148);">
                    <h3 class="text-white">إضافة فئة </h3>
                 </div>
                 <div class="card-body">
@@ -25,6 +42,13 @@
                           <small class="text-danger">{{$message}}</small>
                           @enderror
                         </div>
+                        <div class="col">
+                            <label class="form-label">الايقونة </label>
+                            <input type="text" class="form-control" name="icon" >
+                            @error('icon')
+                          <small class="text-danger">{{$message}}</small>
+                          @enderror
+                        </div>
                     </div>
 
                     <div class="row">
@@ -42,7 +66,7 @@
    <div class="row mt-5">
       <div class="col">
          <div class="card mt-5">
-            <div class="card-header" style="background-color: rgb(105, 46, 160);">
+            <div class="card-header" style="background-color: rgb(130, 119, 148);">
                <h3 class="text-white"> الفئــات</h3>
             </div>
             <div class="card-body">
@@ -64,14 +88,13 @@
                         <td class="text-center">{{$item->name}}</td>
                         <td class="text-center">{{$item->description}}</td>
                         <td class="text-center"><a href="{{route('categories.Edit',['id'=>$item->id])}}"><i class="bi bi-pencil-fill text-success"></i></i></a></td>
-                        <td class="text-center"><a href="{{route('categories.Delete',['id'=>$item->id])}}"><i class="bi bi-trash text-danger"></i></a></td>
+                        <td class="text-center"><button class="btn btn-link" onclick="delete_categories({{$item->id}})"><i class="bi bi-trash text-danger"></i></button></td></td>
                         </tr>
 
                      @endforeach
                   </tbody>
                </table>
             </div>
-
             </div>
          </div>
       </div>

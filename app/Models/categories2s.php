@@ -9,5 +9,12 @@ class categories2s extends Model
     protected $fillable = [
         'name',
         'description',
+        'icon',
     ];
+
+
+    public function products()
+    {
+        return $this->hasMany(products::class);
+    }
 }

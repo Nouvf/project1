@@ -14,4 +14,9 @@ class products extends Model
         'categories2_id',
         'image',
     ];
+
+    public function categoy()
+    {
+        return $this->belongsTo(categories2s::class,'categories2_id','id');
+    }
 }

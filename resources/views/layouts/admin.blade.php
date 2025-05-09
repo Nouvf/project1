@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- أضف هنا -->
+    <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="importmap"></script>
 
     <link rel="stylesheet" href="{{asset('assets/css/common.min.css')}}">
@@ -10,8 +21,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/styles/all-themes.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/styles/all-themes.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
     <link href='https://fonts.googleapis.com/css?family=Almarai' rel='stylesheet'>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
@@ -212,6 +221,8 @@
                 </div>
             </div>
         </nav>
+
+
     </header>
     <main role="main" class="pb-3">
         <div class="row">
@@ -227,7 +238,8 @@
                                     </div>
                                 </div>
                                 <div class="profile-usertitle">
-                                    <div class="sidebar-userpic-name"> نوف اللحيــد   </div>
+                                    <div class="sidebar-userpic-name">{{ Auth::user()->name }}
+                                    </div>
                                     <div class="profile-usertitle-job ">  مدير النظام</div>
                                 </div>
                             </li>
@@ -264,6 +276,15 @@
                                     </li>
                                     <li class="active">
                                         <a asp-controller="PurchaseOrder" asp-action="Create">تحليلات  </a>
+                                    </li>
+
+                                    <li class="active">
+                                        @auth
+                                        <form action="{{route('logout')}}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link text-decoration-non"> <i class="bi bi-box-arrow-in-right"></i></button>
+                                        </form>
+                                        @endauth
                                     </li>
                 
                                    
@@ -331,6 +352,8 @@
     <footer>
 
     </footer>
+    <script  src="{{asset('js/script.js')}}"></script>
+    
     <script  src="{{asset('assets/js/common.min.js')}}"></script>
     <script  src="{{asset('assets/js/admin.js')}}"></script>
     <script  src="{{asset('assets/js/bundles/amcharts5/index.js')}}"></script>

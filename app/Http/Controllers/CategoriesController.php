@@ -23,7 +23,9 @@ class CategoriesController extends Controller
         ]);
        $arr=[
         'name'=>$request->categ_name,
-        'description'=>$request->categ_descreption
+        'description'=>$request->categ_descreption,
+        'icon'=>$request->icon
+
        ];
 
        $items=categories2s::Create($arr);
@@ -35,6 +37,7 @@ class CategoriesController extends Controller
     }
      public function Delete($id)
      {
+       
         $data=categories2s::find($id);
         if($data)
         {
@@ -50,13 +53,18 @@ class CategoriesController extends Controller
      }
 
      public function Update(Request $request)
-     {
-       $data=categories2s::find($request->$id); 
-       $data->Update([
+   {
+
+       $data=categories2s::find($request->id);
+       $data->update([
         'name'=>$request->categ_name,
-        'description'=>$request->categ_descreption
+        'description'=>$request->categ_descreption,
+        'icon'=>$request->icon
 
        ]);
+
        return redirect()->route('categories.index');
-     }
+      
+   }
+   
 }

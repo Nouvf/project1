@@ -4,13 +4,23 @@
       <div class="row mt-5">
          <div class="col d-flex justify-content-center">
             <div class="card mt-5">
-                <div class="card-header" style="background-color: rgb(109, 24, 200);">
+                <div class="card-header" style="background-color: rgb(130, 119, 148);">
                    <h3 class="text-white">تحرير منتج </h3>
                 </div>
                 <div class="card-body">
-                 <form action="{{route('categories.Update')}}" method="POST">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$products->id}}">
+                <form action="{{route('products.Update')}}" method="POST"   enctype="multipart/form-data">
+                  @csrf
+                    <input type="hidden" name="categories2_id" value="{{$products->id}}">
+                    <div class="row">
+                        <div class="col">
+                            <select name="categories2_id" class="form-select mb-3">
+                               @foreach($catogries7 as $item)
+                               <option value="{{$item->id}}">{{$item->name}}</option>>
+                               @endforeach
+                            </select>
+                        </div>
+                    </div>
+            
                     <div class="row">
                         <div class="col">
                           <label class="form-label">اسم المنتج</label>
@@ -35,15 +45,10 @@
                           <input type="text" class="form-control" name="stock" value="{{$products->stock}}">
                            
                         </div>
-                        <div class="col">
-                            <label class="form-label"> الفئة</label>
-                            <input type="text" class="form-control" name="categories2_id" value="{{$products->categories2_id}}" >
-                           
-                        </div>
+                       
                         <div class="col">
                             <label class="form-label">صورة المنتج</label>
-                            <input type="file" class="form-control" name="image" value="{{$products->image}}" >
-                           
+                            <input type="file" class="form-control" name="image"  accept="image/*" >                           
                         </div>
                     </div>
 
@@ -57,8 +62,10 @@
             </div>
          </div>
       </div>
+      
    
 
    
    </div>
 @endsection
+
