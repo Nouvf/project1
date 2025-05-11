@@ -10,17 +10,14 @@
                 <div class="card-body">
                 <form action="{{route('products.Update')}}" method="POST"   enctype="multipart/form-data">
                   @csrf
-<<<<<<< HEAD
                     <input type="hidden" name="categories_id" value="{{$products->id}}">
                     <div class="row">
                         <div class="col">
                             <select name="categories_id" class="form-select mb-3">
-=======
-                    <input type="hidden" name="categories2_id" value="{{$products->id}}">
+                    <input type="hidden" name="categories_id" value="{{$products->id}}">
                     <div class="row">
                         <div class="col">
-                            <select name="categories2_id" class="form-select mb-3">
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+                            <select name="categories_id" class="form-select mb-3">
                                @foreach($catogries7 as $item)
                                <option value="{{$item->id}}">{{$item->name}}</option>>
                                @endforeach
@@ -49,11 +46,8 @@
                     <div class="row">
                         <div class="col">
                           <label class="form-label"> كمية المخزون</label>
-<<<<<<< HEAD
                           <input type="text" class="form-control" name="stocke" value="{{$products->stocke}}">
-=======
                           <input type="text" class="form-control" name="stock" value="{{$products->stock}}">
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
                            
                         </div>
                        

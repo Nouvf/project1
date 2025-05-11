@@ -16,13 +16,10 @@ class ProductsController extends Controller
         $catogries7=DB::table('categories2s')->get();
         //$products=products::with('categoy')->get();
         $products=DB::table('products')
-<<<<<<< HEAD
         ->join('categories2s','products.categories_id','=','categories2s.id')
         ->select('categories2s.name as categories_name','products.name as name','products.price','products.categories_id','products.stocke','products.image','products.id','products.descreption')
-=======
-        ->join('categories2s','products.categories2_id','=','categories2s.id')
-        ->select('categories2s.name as categories_name','products.name as name','products.price','products.categories2_id','products.stock','products.image','products.id','products.descreption')
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+        ->join('categories2s','products.categories_id','=','categories2s.id')
+        ->select('categories2s.name as categories_name','products.name as name','products.price','products.categories_id','products.stock','products.image','products.id','products.descreption')
         ->get();
 
         //dd($products);
@@ -40,13 +37,10 @@ class ProductsController extends Controller
             'name' => 'required|string',
             'descreption' => 'nullable|string|max:1000',
             'price' => 'required',
-<<<<<<< HEAD
             'stocke' => 'required',
             'categories_id' => 'required',
-=======
             'stock' => 'required',
-            'categories2_id' => 'required',
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+            'categories_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,pdf,gif',
         ]);
        // الحصول على الملف
@@ -59,21 +53,14 @@ class ProductsController extends Controller
             'name'=>$request->name,
             'descreption'=>$request->descreption,
             'price'=>$request->price,
-<<<<<<< HEAD
             'stocke'=>$request->stocke,
             'categories_id'=>$request->categories_id,
-=======
             'stock'=>$request->stock,
-            'categories2_id'=>$request->categories2_id,
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+            'categories_id'=>$request->categories_id,
             'image'=>Storage::url($path),
            ];
 
 
-<<<<<<< HEAD
-=======
-          
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
 
            $items=products::Create($arr); // Insert 
            $items->save();
@@ -114,13 +101,10 @@ class ProductsController extends Controller
             'name' => 'required|string',
             'descreption' => 'nullable|string|max:1000',
             'price' => 'required',
-<<<<<<< HEAD
             'stocke' => 'required',
             'categories_id' => 'required',
-=======
             'stock' => 'required',
-            'categories2_id' => 'required',
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+            'categories_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,pdf,gif',
         ]);
       
@@ -134,13 +118,10 @@ class ProductsController extends Controller
             'name'=>$request->name,
             'descreption'=>$request->descreption,
             'price'=>$request->price,
-<<<<<<< HEAD
             'stocke'=>$request->stocke,
             'categories_id'=>$request->categories_id,
-=======
             'stock'=>$request->stock,
-            'categories2_id'=>$request->categories2_id,
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
+            'categories_id'=>$request->categories_id,
             'image'=>Storage::url($path),
 
         ]);
