@@ -6,19 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class categories2s extends Model
 {
-    protected $fillable = [
-<<<<<<< HEAD
-        'id',
-=======
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
-        'name',
-        'description',
-        'icon',
-    ];
+    
+    use HasFactory;
 
+    protected $table = 'categories2s';
+
+    protected $fillable = ['name', 'description', 'icon'];
 
     public function products()
     {
-        return $this->hasMany(products::class);
+        return $this->hasMany(Product::class, 'categories_id');
     }
 }

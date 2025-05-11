@@ -18,7 +18,7 @@ class products extends Model
 
     public function categoy()
     {
-        return $this->belongsTo(categories2s::class,'categories_id','id');
+        return $this->belongsTo(categories2s::class,'categories_id');
 
     }
 }

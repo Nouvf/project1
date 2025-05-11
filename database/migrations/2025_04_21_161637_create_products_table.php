@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('descreption');
             $table->decimal('price',8,2);
             $table->integer('stocke');
-            $table->foreignId('categories_id')->constrained()->delete('cascade');
+            $table->foreignId('categories_id')->constrained('categories2s')->onDelete('cascade');
             $table->string('image')->nullable();
             $table->timestamps();
         });
