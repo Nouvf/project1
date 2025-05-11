@@ -24,6 +24,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< HEAD
     
+=======
+        //
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
     }
 };

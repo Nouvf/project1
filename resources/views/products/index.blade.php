@@ -12,7 +12,11 @@
                     @csrf
                     <div class="row">
                         <div class="col">
+<<<<<<< HEAD
                             <select name="categories_id" class="form-select mb-3">
+=======
+                            <select name="categories2_id" class="form-select mb-3">
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
                                @foreach($catogries7 as $item)
                                <option value="{{$item->id}}">{{$item->name}}</option>>
                                @endforeach
@@ -38,7 +42,11 @@
                         
                         <div class="col">
                             <label class="form-label">الكمية </label>
+<<<<<<< HEAD
                             <input type="number" class="form-control" name="stocke" >
+=======
+                            <input type="number" class="form-control" name="stock" >
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
                             @error('stock')
                           <small class="text-danger">{{$message}}</small>
                           @enderror
@@ -102,9 +110,15 @@
                           <td class="text-center">{{$item->name}}</td>
                           <td class="text-center">{{$item->descreption}}</td>
                           <td class="text-center">{{$item->price}}</td>
+<<<<<<< HEAD
                           <td class="text-center">{{$item->stocke}}</td>
                           <td  class="text-center"><img src="{{$item->image}}" width="100" height="100"></td>
                           <td  class="text-center">{{$item->categories_id}}</td>
+=======
+                          <td class="text-center">{{$item->stock}}</td>
+                          <td  class="text-center"><img src="{{$item->image}}" width="100" height="100"></td>
+                          <td  class="text-center">{{$item->categories2_id}}</td>
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
                           <td class="text-center"><a href="{{route('products.Edit',['id'=>$item->id])}}"><i class="bi bi-pencil-fill text-success"></i></i></a></td>
                           <td class="text-center"><a href="{{route('products.Delete',['id'=>$item->id])}}"><i class="bi bi-trash text-danger"></i></a></td>
                           </tr>

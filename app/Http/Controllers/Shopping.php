@@ -12,7 +12,11 @@ class Shopping extends Controller
     public function List($categories_id)
     {
         $data=DB::table('products')
+<<<<<<< HEAD
         ->where('categories_id','=',$categories_id)
+=======
+        ->where('categories2_id','=',$categories_id)
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
         ->get();
 
 

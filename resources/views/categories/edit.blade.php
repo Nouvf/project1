@@ -26,7 +26,11 @@
                         </div>
                         <div class="col">
                             <label class="form-label">الايقونة </label>
+<<<<<<< HEAD
                             <input type="text" class="form-control" name="cateq_icon" value="{{$catogriess->icon}}">
+=======
+                            <input type="text" class="form-control" name="icon" value="{{$catogriess->icon}}">
+>>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
                             @error('icon')
                           <small class="text-danger">{{$message}}</small>
                           @enderror
