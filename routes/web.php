@@ -9,7 +9,7 @@ use App\Http\Controllers\Shopping;
 
 
 
-Route::get('/', [Shopping::class, 'GetCategories'])->name('index');
+Route::get('/', [Shopping::class, 'GetCategories'])->name('welcome');
 
 
 Auth::routes();

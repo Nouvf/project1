@@ -24,7 +24,7 @@ class Shopping extends Controller
       {
 
         $data=DB::table('categories2s')->get();
-        return view('Shopping.welcome',['categories2s'=>$data]);
+        return view('welcome',['categories2s'=>$data]);
       }
 
       public function Pay(Request $requesst)
