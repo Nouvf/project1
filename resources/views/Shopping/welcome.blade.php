@@ -9,11 +9,6 @@
             <p style="color: rgb(28, 99, 68);text-shadow: 0 0 10px #ba5b5b, 0 0 20px #3d6a57;" >تصل بين يديك أينما كنت!</p>
         </div>
     </div>
-
-
-
-   
-     
     </div>
     <div class="row">
       <div class="col ">

@@ -23,8 +23,7 @@ class Shopping extends Controller
       public function GetCategories()
       {
 
-        $data=DB::table('categories2s')
-        ->get();
+        $data=DB::table('categories2s')->get();
         return view('Shopping.welcome',['categories2s'=>$data]);
       }
 
