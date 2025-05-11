@@ -21,11 +21,15 @@ class Shopping extends Controller
     }
 
       public function GetCategories()
-      {
-
-        $data=DB::table('categories2s')->get();
-        return view('Shopping.welcome',['categories2s'=>$data]);
-      }
+{
+    try {
+        $data = DB::table('categories2s')->get();
+    } catch (\Exception $e) {
+        \Log::error('Error fetching categories2s: ' . $e->getMessage());
+        return view('welcome'); // عرض افتراضي كبديل
+    }
+    return view('Shopping.welcome', ['categories2s' => $data]);
+}
 
       public function Pay(Request $requesst)
       {
