@@ -16,11 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('descreption');
             $table->decimal('price',8,2);
-<<<<<<< HEAD
-            $table->integer('stocke')->nullable();
-=======
             $table->integer('stocke');
->>>>>>> 19d803a68700d6d6c0dc59a59edfc9bb4f680a61
             $table->foreignId('categories_id')->constrained()->delete('cascade');
             $table->string('image')->nullable();
             $table->timestamps();
