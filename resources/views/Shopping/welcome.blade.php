@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+{{ var_dump($categories2s) }}
 <div class="container">
     <div class="row mt-5">
         <div class="col">
