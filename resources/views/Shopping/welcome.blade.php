@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-{{ var_dump($categories2s) }}
+@if(isset($categories2s))
+        {{ var_dump($categories2s) }}
+    @else
+        <p>المتغير $categories2s غير موجود!</p>
+    @endif
 <div class="container">
     <div class="row mt-5">
         <div class="col">
@@ -14,7 +18,6 @@
       <div class="col ">
         <div class="row">
           @foreach($categories2s as $item)
-          
           <div class="col sm-5 col-md-6 col-12 d-flex justify-content-center mb-5">
             <a href="{{route('shopping.list',['categories_id'=>$item->id])}}">
               <div class="card"  style="width: 300px;">
@@ -30,22 +33,13 @@
                           <i class="{{$item->icon}}" style="font-size: 100px; color:rgb(130, 119, 148);"></i>
                         </div>
                       </div>
-        
                     </div>
-
-    
-
               </div>
             </a>
-
-           
-
           </div>
           @endforeach
-
         </div>
       </div>
-
     </div>
     </div>
 
