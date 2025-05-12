@@ -22,13 +22,9 @@ class Shopping extends Controller
 
       public function GetCategories()
       {
-$data = [
-        (object) ['id' => 1, 'name' => 'الأشجار', 'description' => 'زراعة الأشجار', 'icon' => 'bi bi-tree'],
-        (object) ['id' => 2, 'name' => 'الأزهار', 'description' => 'تنمية الأزهار', 'icon' => 'bi bi-flower'],
-        (object) ['id' => 3, 'name' => 'النباتات', 'description' => 'رعاية النباتات', 'icon' => 'bi bi-leaf'],
-        (object) ['id' => 4, 'name' => 'التقليم', 'description' => 'أدوات التقليم', 'icon' => 'bi bi-scissors'],
-    ];
-    return view('Shopping.welcome', ['categories2s' => $data]);
+
+        $data=DB::table('categories2s')->get();
+        return view('Shopping.welcome',['categories2s'=>$data]);
       }
 
       public function Pay(Request $requesst)
