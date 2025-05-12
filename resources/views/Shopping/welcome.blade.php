@@ -1,10 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@if(isset($categories2s))
-        {{ var_dump($categories2s) }}
-    @else
-        <p>المتغير $categories2s غير موجود!</p>
-    @endif
 <div class="container">
     <div class="row mt-5">
         <div class="col">
